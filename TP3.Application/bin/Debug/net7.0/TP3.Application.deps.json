@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "TP3.Application/1.0.0": {
+        "dependencies": {
+          "TP3.Domain": "1.0.0"
+        },
+        "runtime": {
+          "TP3.Application.dll": {}
+        }
+      },
+      "TP3.Domain/1.0.0": {
+        "runtime": {
+          "TP3.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TP3.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TP3.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

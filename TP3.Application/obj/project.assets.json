@@ -1,0 +1,91 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "TP3.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/TP3.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TP3.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TP3.Domain/1.0.0": {
+      "type": "project",
+      "path": "../TP3.Domain/TP3.Domain.csproj",
+      "msbuildProject": "../TP3.Domain/TP3.Domain.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "TP3.Domain >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\pedro\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Programming\\INFNET\\DOTNET\\TP 3 - Amigos API e APP\\tp3_webApp_webApi\\TP3.Application\\TP3.Application.csproj",
+      "projectName": "TP3.Application",
+      "projectPath": "D:\\Programming\\INFNET\\DOTNET\\TP 3 - Amigos API e APP\\tp3_webApp_webApi\\TP3.Application\\TP3.Application.csproj",
+      "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
+      "outputPath": "D:\\Programming\\INFNET\\DOTNET\\TP 3 - Amigos API e APP\\tp3_webApp_webApi\\TP3.Application\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "D:\\Programming\\INFNET\\DOTNET\\TP 3 - Amigos API e APP\\tp3_webApp_webApi\\TP3.Domain\\TP3.Domain.csproj": {
+              "projectPath": "D:\\Programming\\INFNET\\DOTNET\\TP 3 - Amigos API e APP\\tp3_webApp_webApi\\TP3.Domain\\TP3.Domain.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
