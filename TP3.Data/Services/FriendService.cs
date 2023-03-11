@@ -50,5 +50,16 @@ namespace TP3.Data.Services
 
             return viewModel;
         }
+
+        public async Task<FriendViewModel> UpdateFriendAsync(FriendViewModel updatedFriend)
+        {
+            Friend friend = await _repository.GetFriendById(updatedFriend.Id);
+           
+            friend = _mapper.Map<Friend>(updatedFriend);
+
+            var teste = await _repository.UpdateFriendAsync(friend);
+
+            return updatedFriend;
+        }
     }
 }

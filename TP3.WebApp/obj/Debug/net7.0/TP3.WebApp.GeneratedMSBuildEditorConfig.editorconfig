@@ -40,8 +40,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Programming/INFNET/DOTNET/TP 3 - Amigos API e APP/tp3_webApp_webApi/TP3.WebApp/Views/Friends/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJpZW5kc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/INFNET/DOTNET/TP 3 - Amigos API e APP/tp3_webApp_webApi/TP3.WebApp/Views/Friends/FriendForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJpZW5kc1xGcmllbmRGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Programming/INFNET/DOTNET/TP 3 - Amigos API e APP/tp3_webApp_webApi/TP3.WebApp/Views/Friends/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJpZW5kc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/INFNET/DOTNET/TP 3 - Amigos API e APP/tp3_webApp_webApi/TP3.WebApp/Views/Friends/UpdateFriend.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJpZW5kc1xVcGRhdGVGcmllbmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Programming/INFNET/DOTNET/TP 3 - Amigos API e APP/tp3_webApp_webApi/TP3.WebApp/Views/Home/Index.cshtml]

@@ -1,6 +1,5 @@
 ﻿@model List<TP3.Application.ViewModels.FriendViewModel>
 @{
-    Layout = null;
 }
 
 <html lang="en">
@@ -26,51 +25,49 @@
                         Friend
                     </a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white; font-weight: bolder;" asp-action="FriendsEmail">
-                        Friends With Email
-                    </a>
-                </li>
-            </ul>
         </div>
     </nav>
-    <h1 class="text-center">Welcome to your Friends Agenda</h1>
+    <h1 class="text-center">Welcome to your Birthday Agenda</h1>
 
     <div class="my-container" style="width: 660px;">
+        <h3>Birthdays</h3>
+       
+        <h3>Birthday List</h3>
         <table class="table table-dark">
             <thead>
                 <tr>
-                    <th scope="col">Select</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
-                    <th scope="col">BirthDate</th>
+                    <th scope="col">Birthdate</th>
+                    <th scope="col">Options</th>
                 </tr>
             </thead>
-            <h3>Friends List</h3>
-            @using (Html.BeginForm("Selected", "Friends", FormMethod.Post))
-            {
-                foreach (var friend in Model)
+            <tbody>
+                @foreach (var friend in Model)
                 {
-                    <tr>
-                        <td>
-                            @friend.FirstName
+                   
 
-                        </td>
-                        <td>
-                            @friend.LastName
+                        <tr>
+                            <td>
+                                @friend.FirstName
+                            </td>
+                            <td>
+                                @friend.LastName
+                            </td>
+                            <td>
+                                @friend.BirthDate
+                            </td>
+                          
+                            <td>
+                                <a asp-action="EditFriend" asp-route-id="@friend.Id">Edit</a> |
+                                <a asp-action="Delete" asp-route-id="@friend.Id">Delete</a>
+                            </td>
 
-                        </td>
-
-                        <td>
-                            @friend.BirthDate
-
-                        </td>
-
-                    </tr>
+                        </tr>
+                    
                 }
-                <input type="submit" value="Get Selected" />
-            }
-
+            </tbody>
+        </table>
 
     </div>
 </body>

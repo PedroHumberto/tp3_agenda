@@ -10,5 +10,6 @@ namespace TP3.Application.Interfaces
         Task<FriendViewModel> GetFriendBydId(Guid Id);
         Task<FriendViewModel> AddFriendAsync(FriendViewModel model);
         void DeleteFriendAsync(Guid id);
+        Task<FriendViewModel> UpdateFriendAsync(FriendViewModel updatedFriend);
     }
 }

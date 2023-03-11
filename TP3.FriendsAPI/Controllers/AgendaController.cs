@@ -34,16 +34,22 @@ namespace TP3.FriendsAPI.Controllers
 
 
 
-        [HttpGet("{id}")]
+        [HttpGet("selected/{id}")]
         public async Task<IActionResult> GetFriendsById(Guid id)
         {
             FriendViewModel model = await _context.GetFriendBydId(id);
             if (model == null) return NoContent();
 
             return Ok(model);
-        } 
+        }
 
+        [HttpPatch("updatefriend/{id}")]
+        public async Task<IActionResult> UpdateFriendById(FriendViewModel updatedFriend)
+        {
+            var updateFriend = await _context.UpdateFriendAsync(updatedFriend);
 
+            return Ok(updateFriend);
+        }
 
         [HttpPost("delete")]
         public IActionResult Delete(Guid Id)
