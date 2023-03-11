@@ -8,20 +8,16 @@ namespace TP3.Data.Services
     public class FriendService : IFriendService
     {
         private readonly IFriendRepository _repository;
-        private readonly IMapper _mapper;
 
-        public FriendService(IFriendRepository repository, IMapper mapper)
+        public FriendService(IFriendRepository repository)
         {
             _repository = repository;
-            _mapper = mapper;
         }
 
         public async Task<FriendViewModel> AddFriendAsync(FriendViewModel model)
         {
-            var friend = _mapper.Map<Friend>(model);
+            await _repository.AddFriendAsync(model);
 
-            await _repository.AddFriendAsync(friend);
-           
             return model;
         }
 
@@ -36,28 +32,21 @@ namespace TP3.Data.Services
         {
             var friendList = await _repository.GetAllFriendAsync();
 
-            var viewModel = _mapper.Map<List<FriendViewModel>>(friendList);
-
-            return viewModel;
+            return friendList;
         }
 
         public async Task<FriendViewModel> GetFriendBydId(Guid Id)
         {
+            var friendModel = await _repository.GetFriendById(Id);
 
-            Friend friend = await _repository.GetFriendById(Id);
-
-            var viewModel = _mapper.Map<FriendViewModel>(friend);
-
-            return viewModel;
+            return friendModel;
         }
 
+
+        //REFAZER O MAP NO REPOSITORY, TROCAR ALGUNS DADOS
         public async Task<FriendViewModel> UpdateFriendAsync(FriendViewModel updatedFriend)
         {
-            Friend friend = await _repository.GetFriendById(updatedFriend.Id);
-           
-            friend = _mapper.Map<Friend>(updatedFriend);
-
-            var teste = await _repository.UpdateFriendAsync(friend);
+            _repository.UpdateFriendAsync(updatedFriend);
 
             return updatedFriend;
         }

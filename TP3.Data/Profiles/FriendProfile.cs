@@ -9,8 +9,10 @@ namespace TP3.Data.Profiles
     {
         public FriendProfile()
         {
+            CreateMap<List<FriendViewModel>, List<Friend>>();
             CreateMap<FriendViewModel, Friend>();
             CreateMap<Friend, FriendViewModel>();
+            CreateMap<List<Friend>, List<FriendViewModel>>();
 
         }
     }
