@@ -1,0 +1,78 @@
+﻿@model List<TP3.Application.ViewModels.FriendViewModel>
+@{
+    Layout = null;
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+    <title>Friends</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="collapse navbar-collapse" style="margin-left: 15px;">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" style="color: white; font-weight: bolder;" asp-action="Index"
+                       asp-controller="Friends">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" style="color: white; font-weight: bolder;" asp-action="FriendForm">
+                        Add
+                        Friend
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" style="color: white; font-weight: bolder;" asp-action="FriendsEmail">
+                        Friends With Email
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <h1 class="text-center">Welcome to your Friends Agenda</h1>
+
+    <div class="my-container" style="width: 660px;">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Select</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">BirthDate</th>
+                </tr>
+            </thead>
+            <h3>Friends List</h3>
+            @using (Html.BeginForm("Selected", "Friends", FormMethod.Post))
+            {
+                foreach (var friend in Model)
+                {
+                    <tr>
+                        <td>
+                            @friend.FirstName
+
+                        </td>
+                        <td>
+                            @friend.LastName
+
+                        </td>
+
+                        <td>
+                            @friend.BirthDate
+
+                        </td>
+
+                    </tr>
+                }
+                <input type="submit" value="Get Selected" />
+            }
+
+
+    </div>
+</body>
+
+</html>

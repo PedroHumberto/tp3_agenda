@@ -7,8 +7,8 @@ namespace TP3.Data.Services
 {
     public class FriendService : IFriendService
     {
-        public IFriendRepository _repository;
-        public IMapper _mapper;
+        private readonly IFriendRepository _repository;
+        private readonly IMapper _mapper;
 
         public FriendService(IFriendRepository repository, IMapper mapper)
         {

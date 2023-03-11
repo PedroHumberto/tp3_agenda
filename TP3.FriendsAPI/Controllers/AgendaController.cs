@@ -8,7 +8,7 @@ namespace TP3.FriendsAPI.Controllers
     [Route("[controller]")]
     public class AgendaController : Controller
     {
-        IFriendService _context;
+        private readonly IFriendService _context;
 
 
         public AgendaController(IFriendService context)

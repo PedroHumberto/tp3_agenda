@@ -9,7 +9,7 @@ namespace TP3.Data.Repository
 {
     public class FriendRepository : IFriendRepository
     {
-        FriendsDbContext _context;
+        private readonly FriendsDbContext _context;
 
         public FriendRepository(FriendsDbContext context)
         {
