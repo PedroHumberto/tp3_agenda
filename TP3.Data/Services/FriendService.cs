@@ -53,11 +53,11 @@ namespace TP3.Data.Services
 
         public async Task<FriendViewModel> UpdateFriendAsync(FriendViewModel updatedFriend)
         {
-            Friend friend = await _repository.GetFriendById(updatedFriend.Id);
-           
-            friend = _mapper.Map<Friend>(updatedFriend);
+            Friend friend = await _repository.GetFriendById(updatedFriend.Id);           
 
-            var teste = await _repository.UpdateFriendAsync(friend);
+            _mapper.Map(updatedFriend, friend);            
+
+            await _repository.UpdateFriendAsync(friend);
 
             return updatedFriend;
         }

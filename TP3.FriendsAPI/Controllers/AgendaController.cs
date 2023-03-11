@@ -32,8 +32,6 @@ namespace TP3.FriendsAPI.Controllers
             return Ok(friendList);
         }
 
-
-
         [HttpGet("selected/{id}")]
         public async Task<IActionResult> GetFriendsById(Guid id)
         {

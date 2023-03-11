@@ -8,7 +8,7 @@ namespace TP3.Application.Interfaces
         Task<Friend> GetFriendById(Guid Id);
         Task<Friend> AddFriendAsync(Friend model);
         Task DeleteFriendAsync(Friend id);
-        Task<Friend> UpdateFriendAsync(Friend updatedFriend);
+        Task UpdateFriendAsync(Friend updatedFriend);
     }
 
 }

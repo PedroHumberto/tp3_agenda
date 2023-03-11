@@ -46,11 +46,9 @@ namespace TP3.Data.Repository
             return null;
         }
 
-        public async Task<Friend> UpdateFriendAsync(Friend updatedFriend)
+        public async Task UpdateFriendAsync(Friend updatedFriend)
         {
             await _context.SaveChangesAsync();
-
-            return updatedFriend;
         }
     }
 }

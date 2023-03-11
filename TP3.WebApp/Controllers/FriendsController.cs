@@ -81,6 +81,22 @@ namespace TP3.WebApp.Controllers
         }
         //END OF POST METHOD
 
+        //UPDATE METHOD
+        public async Task<IActionResult> UpdateFriend(Guid id)
+        {
+            var URL_PATH = $"updatefriend/{id}";
+            if (ModelState.IsValid)
+            {
+                var response = await _client.GetAsync(URL_PATH);
+                
+                var jsonResponse = await response.Content.ReadAsStringAsync();
+
+                FriendViewModel friend = JsonConvert.DeserializeObject<FriendViewModel>(jsonResponse);
+
+                return View(friend);
+            }
+            return View(id);
+        }
         [HttpPost]
         public async Task<IActionResult> UpdateFriend(FriendViewModel updateFriend, Guid id)
         {
@@ -89,7 +105,7 @@ namespace TP3.WebApp.Controllers
             {
                 try
                 {
-                    var postResponse = await _client.PostAsJsonAsync<FriendViewModel> (URL_PATH, updateFriend);
+                    var postResponse = await _client.PatchAsJsonAsync<FriendViewModel>(URL_PATH, updateFriend);
 
                     if (!postResponse.IsSuccessStatusCode) return BadRequest();
 
@@ -99,7 +115,7 @@ namespace TP3.WebApp.Controllers
                 {
                     Console.Write("ERRO " + ex.ToString());
 
-                    return RedirectToAction(nameof(Index));
+                    return BadRequest(ex.ToString());
                 }
                 
             }
