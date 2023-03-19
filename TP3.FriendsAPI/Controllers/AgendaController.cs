@@ -49,7 +49,7 @@ namespace TP3.FriendsAPI.Controllers
             return Ok(updateFriend);
         }
 
-        [HttpPost("delete")]
+        [HttpPost("delete/{id}")]
         public IActionResult Delete(Guid Id)
         {
             _context.DeleteFriendAsync(Id);

@@ -84,7 +84,7 @@ namespace TP3.WebApp.Controllers
         //UPDATE METHOD
         public async Task<IActionResult> UpdateFriend(Guid id)
         {
-            var URL_PATH = $"updatefriend/{id}";
+            var URL_PATH = $"selected/{id}";
             if (ModelState.IsValid)
             {
                 var response = await _client.GetAsync(URL_PATH);
@@ -120,6 +120,47 @@ namespace TP3.WebApp.Controllers
                 
             }
             return View(updateFriend);
+        }
+
+        //DELETE
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var URL_PATH = $"selected/{id}";
+            if (ModelState.IsValid)
+            {
+                var response = await _client.GetAsync(URL_PATH);
+
+                var jsonResponse = await response.Content.ReadAsStringAsync();
+
+                FriendViewModel friend = JsonConvert.DeserializeObject<FriendViewModel>(jsonResponse);
+
+                return View(friend);
+            }
+            return View(id);
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteFriend(Guid id)
+        {
+            var URL_PATH = $"delete/{id}";
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var postResponse = await _client.PostAsJsonAsync<Guid>(URL_PATH, id);
+
+                    if (!postResponse.IsSuccessStatusCode) return BadRequest();
+
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception ex)
+                {
+                    Console.Write("ERRO " + ex.ToString());
+
+                    return BadRequest(ex.ToString());
+                }
+
+            }
+            return View(id);
         }
 
 
